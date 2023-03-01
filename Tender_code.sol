@@ -10,7 +10,7 @@ contract Tender{
     uint public minValue;
     uint private minOffer;
     
-    // Model an offering Companies
+    // Companies that offer
     struct OfferCompany {
         address companyAddress;
         string companyName;
@@ -21,7 +21,7 @@ contract Tender{
     mapping(uint => OfferCompany) private companyInfo;
     
     
-    // Constructor set the minimum value to offer by the owner of the contract
+    // Constructor to set the minimum offer value by the owner of the contract
     function Tender (uint _minValue) public {
         owner = msg.sender;
         if(_minValue != 0) minValue = _minValue;
